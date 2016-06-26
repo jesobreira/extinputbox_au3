@@ -41,10 +41,11 @@ Func _ExtInputBox($sTitle, $sTexts, $sDefaults = Null, $sPasswords = Null, $sBtn
 	  Else
 		 $style = -1
 	  EndIf
+	  Local $value = Null
 	  If $aDefaults[0] = $aInputs[0] Then
-		 Local $value = $aDefaults[$i]
+		 $value = $aDefaults[$i]
 	  EndIf
-	  $aInputs[$i] = GUICtrlCreateInput($aDefaults[$i], 2, (($i-1)*($iTextHeight + $iLabelHeight + 3))+$iLabelHeight+2, $iWidth-2, $iTextHeight, $style)
+	  $aInputs[$i] = GUICtrlCreateInput($value, 2, (($i-1)*($iTextHeight + $iLabelHeight + 3))+$iLabelHeight+2, $iWidth-2, $iTextHeight, $style)
    Next
 
    $aBtnLabels = StringSplit($sBtnLabels, "|")
